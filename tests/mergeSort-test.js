@@ -1,15 +1,15 @@
 var assert = require('chai').assert;
 
-import { makeArray, sortMe, verifySort } from '../lib/insertionSort.js';
+import { makeArray, sortMe, verifySort} from '../lib/bubbleSort.js';
 import index from '../lib/index.js'
 
-describe('insertion sort', () => {
+describe('merge sort', () => {
 
-  var stress = 28000
+  var stress = 22000
 
   it('should generate an array of n numbers', () => {
-    var arr = makeArray(stress, 'numbers');
-    assert.equal(arr.length, stress);
+    var arrayToSort = makeArray(1000, 'numbers');
+    assert.equal(arrayToSort.length, 1000);
   })
 
   it('should sort a small array of numbers', () => {
@@ -33,8 +33,9 @@ describe('insertion sort', () => {
   })
 
   it('should sort a very large array of letters', () => {
-    assert.equal(verifySort(sortMe(makeArray(stress, null, 0, stress))), true);
+    assert.equal(verifySort(sortMe(makeArray(stress))), true);
     console.log(stress)
   })
+
 
 })
